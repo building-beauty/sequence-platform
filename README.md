@@ -35,6 +35,8 @@ Perhaps HTML element tests: cards, buttons, text, field.
 Some description of the application (JSON or YAML) that drives
 its entire operation, which is comprehensible, coherent, and good.
 
+See "THE ESSENCE"
+
 #### client environment
 
 We need a central handler and event queue (cheq) to allow browsers
@@ -42,6 +44,8 @@ to operate properly.
 
 We need this cheq to read and execute features driven by the 
 'internal structure' described above.
+
+See "EVENT QUEUE" and "CENTRAL HANDLER" and "INIT" and "PROCESS"
 
 #### persistence (or server environment)
 

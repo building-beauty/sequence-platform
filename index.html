@@ -1,0 +1,103 @@
+<html>
+<head>
+
+<title>The Sequence Center</title>
+
+<script>
+
+// ***************************************************************
+// EVENT QUEUE
+//
+
+var event_queue = [];
+var the_event = null;
+
+// ***************************************************************
+// CENTRAL HANDLER:
+//
+// called by onload and setTimeout
+
+function central_handler () {
+    if (!(event_queue.length > 0)) {
+      return;
+    }
+    the_event = event_queue.shift();
+
+    // call event
+    window[the_event.name]();
+
+    // only loop until the stack is empty
+    if (event_queue.length > 0) {
+       setTimeout (function () {
+                    central_handler();
+                   },
+                   the_event.delay);
+    }
+}
+
+// ***************************************************************
+// INIT
+// called by body element's onload
+//
+
+function init () {
+    // start from the JSON structure 'start'
+    // put into element 'body'
+    process (start,"body");
+}
+
+// ***************************************************************
+// PROCESS
+//
+// process the NEXT item in the ESSENCE
+//
+
+function process (obj,target_id) {
+    var target_element = document.getElementById(target_id);
+
+    // ITERATE THROUGH THE FEATURES HERE
+    if (obj["type"] == "replace_html") {
+       document.getElementById(obj["id"]).innerHTML = obj["content"];
+    }
+
+    // CALL PROCESS ON ANY JSON ARRAY
+    if (Array.isArray(obj)) {
+       for (var x of obj) {
+           process (x,target_id);
+       }
+    }
+}
+
+
+// ***************************************************************
+// THE ESSENCE or CENTRAL APPLICATION DESCRIPTION
+//
+// The ESSENCE, or configuration
+// AKA The application definition
+// (a kind of option-oriented programming)
+//
+
+var start = main_page();
+
+function main_page () {
+
+    var main_page = {
+         "type":"replace_html",
+         "id":"root",
+         "content":"Sequence Center"
+    };
+
+    return main_page;
+}
+
+</script>
+
+</head>
+
+<body onload="event_queue.push({'name':'init','delay':2000}); central_handler();">
+ <div id="root">
+  Before
+ </div>
+</body>
+
+</html>
