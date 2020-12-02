@@ -1,5 +1,13 @@
 # sequence-platform
 
+## TODO for step 1: 
+(a) describe a learning book (from the sequence book document) 
+   [a detailed explanation for equilvalence to the 'known idea' of the gate]
+(b) describe the human environment / context 
+   [to provide equivalence to environment represented by the photo in gatemaker]
+(c) describe how step 0 is starting the transformation of (b) into (a)+(b)
+(d) describe with centers
+
 ## The goal
 
 A platform for building interactive educational sequences,
