@@ -1,15 +1,17 @@
 # sequence-platform
 
-## TODO for step 1
-   **[these comments explain the match to gatemaker for this programming exercise]**
+## TO DO for step 1
+   *[bracketed comments explain the match to gatemaker for this programming exercise]*
 
-(a) describe a learning book (from the sequence book document),
+(a) describe a learning book (from our document 'a sequence book'),
     which we call here 'interactive educational sequences'.
-    **[this detailed explanation is necessary to make it as clear
-    to the reader of this document as the 'known idea' of the gate]**
+
+    *[this detailed explanation is necessary to make it as clear
+    to the reader of this document as the 'known idea' of the gate]*
 
 (b) describe the human environment / context 
-    **[to provide equivalence to environment represented by the photo in gatemaker]**
+
+    *[to provide equivalence to environment represented by the photo in gatemaker]*
 
 (c) describe how step 0 is starting the transformation of (b) into (a)+(b)
 
