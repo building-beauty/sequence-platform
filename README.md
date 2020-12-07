@@ -28,7 +28,7 @@ as the 'known idea' of the gate]*
 
 (c) describe how step 0 is starting the transformation of (b) into (a)+(b)
 
-*[this will be the equivalent of drawing a gate on a photo.]*]
+*[this will be the equivalent of drawing a gate on a photo.]*
 
 (d) describe with centers
 
@@ -48,7 +48,7 @@ see (a) above
 
 The kinds of things we want people to see, discover, or learn,
 cannot be achieved through the memorizing of sets of symbols.
-They must build these new ideas in thei minds, they must try to
+They must build these new ideas in their minds, they must try to
 use them as a new perspective on situations they previously 
 would have dealt with differently.
 
