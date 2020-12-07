@@ -116,16 +116,31 @@ to harmonize with.
 
 But what exectly is this environment? What are its salient aspects, those with which we need to harmonize?
 
+**(viewport)**
 The user primary interacts with our cards through the actual viewport, which represents the area in which activity takes place.
 
 The virtual page, or virtual working area, can extend beyond the viewport.
 
+
+**(interaction)**
 Outside of the viewport, the user can interact with a browser's back, forward, and refresh buttons, which have a narrow range of expected behavior.
 
 There are also key mappings, such as for arrows, that can be assigned a somewhat wider range of behaviors.
 
 The mouse or clickpad or touchscreen affords an even wider range of behaviors, which are acceptable depending upon what is visiable
 in the viewport at that moment.
+
+**(presentation)**
+
+**(change)**
+
+**(persistence)**
+
+**(client-server interaction)**
+
+**(client events, server rest api)**
+
+**(dom, javascript, css)**
 
 
 ## The approach
