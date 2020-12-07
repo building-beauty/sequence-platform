@@ -14,6 +14,11 @@ write about those, and *then* work on characterizations.
 
 But I'll try.
 
+It is my sincere hope that, with the creation of tools emerging from this group,
+this kind of effort will NOT just become a multi-layered decomposition 
+exercise, but will instead be a deeply-felt collaborative artistic effort, 
+one that allows the stakeholders to work together with joy and purpose.
+
 *[the bracketed/italic comments enumerate the analogies to gatemaker for this programming exercise]*
 
 (a) describe a learning book (from our document 'a sequence book'),
@@ -43,20 +48,23 @@ sufficient to allow the student to train on some of the
 ideas presented in Christopher Alexander's four book series
 'The Nature of Order'.
 
-## 'Interactive educational sequences'
-see (a) above
-
-The kinds of things we want people to see, discover, or learn,
-cannot be achieved through the memorizing of sets of symbols.
-They must build these new ideas in their minds, they must try to
-use them as a new perspective on situations they previously 
-would have dealt with differently.
+## some universals
+for (a) above
 
 **(presentation and interaction)**
 This experience will present and engage, with purpose.
 
 **(reliability, trust, stability)**
 This experience will happen safely, in a supportive fashion.
+
+## 'Interactive educational sequences'
+for (a) above
+
+The kinds of things we want people to see, discover, or learn,
+cannot be achieved through the memorizing of sets of symbols.
+They must build these new ideas in their minds, they must try to
+use them as a new perspective on situations they previously 
+would have dealt with differently.
 
 **(cards)**
 We will do this by presenting a series of interconnected 'cards'.
@@ -111,7 +119,7 @@ A 'repeat option' allows the learner to try again, or go back,
 or save multiple versions of their work for comparison, etc.
 
 ## The webapp
-see (b) above
+for (b) above
 
 We've decided to present this 'interactive educational sequence'
 to the learner as a web application.
@@ -159,7 +167,7 @@ but the order we think it should be built, corrected as we go, reflected
 in the structure of centers in the application.
 
 ## The steps
-see (c) above
+for (c) above
 
 ### step 1
 
