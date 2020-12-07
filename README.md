@@ -105,6 +105,7 @@ A 'repeat option' allows the learner to try again, or go back,
 or save multiple versions of their work for comparison, etc.
 
 ## The webapp
+see (b) above
 
 We've decided to present this 'interactive educational sequence'
 to the learner as a web application.
@@ -150,6 +151,7 @@ but the order we think it should be built, corrected as we go, reflected
 in the structure of centers in the application.
 
 ## The steps
+see (c) above
 
 ### step 1
 
