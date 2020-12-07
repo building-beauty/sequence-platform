@@ -132,15 +132,13 @@ in the viewport at that moment.
 
 **(presentation)**
 
-**(change)**
-
-**(persistence)**
+**(change, inertia, persistence)**
 
 **(client-server interaction)**
 
 **(client events, server rest api)**
 
-**(dom, javascript, css)**
+**(dom, javascript, css, server-side language)**
 
 
 ## The approach
