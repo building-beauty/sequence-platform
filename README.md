@@ -2,6 +2,16 @@
 
 ## Preliminary work for step 1
 
+The psychological effect of any authored lesson won't
+be apparent until it is authored. Hence we can't know
+too much about its structure. So the work done to 
+create a description of the structure of lessons may
+be premature, even though we all think we know what
+those will be. In my experience, we need to build
+effective X's and ask ourselves what happened.
+
+But I'll try.
+
 *[bracketed comments enumerate the analogies to gatemaker for this programming exercise]*
 
 (a) describe a learning book (from our document 'a sequence book'),
@@ -34,13 +44,13 @@ They must build these new ideas in thei minds, they must try to
 use them as a new perspective on situations they previously 
 would have dealt with differently.
 
-(cards)
+**(cards)**
 We will do this by presenting a series of interconnected 'cards'.
 These cards are intended to allow the learner to concentrate on
 that presentation, whether it is an explanation, and experiment,
 an exercise, or something else.
 
-(sets of cards)
+**(sets of cards)**
 The division between 'cards' and 'sets of cards', to effectively
 present an idea or allow for discovery or both, depends upon,
 effectiveness. If one card will do, fine. It could have a single
@@ -49,40 +59,40 @@ interactive exercise. If it works better on a set of cards,
 that's what we'll do. There is no number of cards *a priori* to
 help the learner to achieve a given goal. 
 
-(sequence)
+**(sequence)**
 A 'sequence' of 'sets of cards' empowers the learner to allow the idea
 to 'unfold' in their mind, through explanation and interaction.
 Again, if a 'sequence' is the right way to effectively convey
 something, then it's a sequence. There is no necessary technical
 connection. Whatever works.
 
-(background)
+**(background)**
 An 'background explanation' card presents images and text that introduce
 an idea to keep 'in mind'. It isn't part of an 'exercise'.
 
-(exercise intro)
+**(exercise intro)**
 An 'exercise explanation' is a card that 'introduces' the idea behind the
 exercise. This is optional. Some exercises may be helped by this,
 and some may not. It is an experimental question.
 
-(exercise demo)
+**(exercise demo)**
 An 'exercise demonstration' is a set of cards that show someone 
 performing the direct exercise. It should be as close as possible
 to the situation the person will be in. Again, this is optional.
 There may be times when it doesn't help. But this should be
 determined experimentally.
 
-(exercise interaction)
+**(exercise interaction)**
 An 'exercise' is a set of cards that asks a learner to do something.
 The pedagogical intention might be to enlighten, or to train,
 or to allow the learner to practice something they saw performed 
 in the demonstration.
 
-(exercise reflection)
+**(exercise reflection)**
 A 'reflection' is a set of cards that asks the learner to look
 at their work, and consider one or more aspects of it.
 
-(exercise retry)
+**(exercise retry)**
 A 'repeat option' allows the learner to try again, or go back,
 or save multiple versions of their work for comparison, etc.
 
