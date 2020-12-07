@@ -34,39 +34,81 @@ They must build these new ideas in thei minds, they must try to
 use them as a new perspective on situations they previously 
 would have dealt with differently.
 
+(cards)
 We will do this by presenting a series of interconnected 'cards'.
 These cards are intended to allow the learner to concentrate on
 that presentation, whether it is an explanation, and experiment,
 an exercise, or something else.
 
+(sets of cards)
+The division between 'cards' and 'sets of cards', to effectively
+present an idea or allow for discovery or both, depends upon,
+effectiveness. If one card will do, fine. It could have a single
+dot or word on it, or nothing, or an expensive movie, or an 
+interactive exercise. If it works better on a set of cards,
+that's what we'll do. There is no number of cards *a priori* to
+help the learner to achieve a given goal. 
+
+(sequence)
 A 'sequence' of 'sets of cards' empowers the learner to allow the idea
 to 'unfold' in their mind, through explanation and interaction.
+Again, if a 'sequence' is the right way to effectively convey
+something, then it's a sequence. There is no necessary technical
+connection. Whatever works.
 
+(background)
 An 'background explanation' card presents images and text that introduce
 an idea to keep 'in mind'. It isn't part of an 'exercise'.
 
-An 'exercise explanation' is a card introduces the idea behind the
+(exercise intro)
+An 'exercise explanation' is a card that 'introduces' the idea behind the
 exercise. This is optional. Some exercises may be helped by this,
 and some may not. It is an experimental question.
 
+(exercise demo)
 An 'exercise demonstration' is a set of cards that show someone 
 performing the direct exercise. It should be as close as possible
 to the situation the person will be in. Again, this is optional.
 There may be times when it doesn't help. But this should be
 determined experimentally.
 
+(exercise interaction)
 An 'exercise' is a set of cards that asks a learner to do something.
 The pedagogical intention might be to enlighten, or to train,
 or to allow the learner to practice something they saw performed 
 in the demonstration.
 
+(exercise reflection)
 A 'reflection' is a set of cards that asks the learner to look
 at their work, and consider one or more aspects of it.
 
+(exercise retry)
 A 'repeat option' allows the learner to try again, or go back,
 or save multiple versions of their work for comparison, etc.
 
 ## The webapp
+
+We've decided to present this 'interactive educational sequence'
+to the learner as a web application.
+
+This means that it runs in a web browser, no matter the device on which it is used.
+
+So Web browsers, and programming within one, are an environment that we will need
+to harmonize with.
+
+But what exectly is this environment? What are its salient aspects, those with which we need to harmonize?
+
+The user primary interacts with our cards through the actual viewport, which represents the area in which activity takes place.
+
+The virtual page, or virtual working area, can extend beyond the viewport.
+
+Outside of the viewport, the user can interact with a browser's back, forward, and refresh buttons, which have a narrow range of expected behavior.
+
+There are also key mappings, such as for arrows, that can be assigned a somewhat wider range of behaviors.
+
+The mouse or clickpad or touchscreen affords an even wider range of behaviors, which are acceptable depending upon what is visiable
+in the viewport at that moment.
+
 
 ## The approach
 
