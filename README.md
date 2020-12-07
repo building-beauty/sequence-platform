@@ -173,6 +173,9 @@ first end-to-end step.
 
 The first differentiation of this would need to be simple.
 Perhaps HTML element tests: cards, buttons, text, field.
+
+In code, see "main_page" json structure.
+
 * (set of cards)(cards)
 * (viewport)(interaction)
 
@@ -181,7 +184,7 @@ Perhaps HTML element tests: cards, buttons, text, field.
 Some description of the application (JSON or YAML) that drives
 its entire operation, which is comprehensible, coherent, and good.
 
-See "THE ESSENCE"
+In code, see "THE ESSENCE"
 
 * (sequence)
 * (central description)
@@ -204,6 +207,8 @@ In code, see "EVENT QUEUE" and "CENTRAL HANDLER" and "INIT" and "PROCESS"
 For now, we'll store in javascript the test data we have separated,
 because we think it should persist, be changeable through CRUD cycles, 
 and be kept on the server.
+
+In code, see 'storage of user actions'.
 
 * (reliability,trust,stability)
 * (persistence)(server rest api)
