@@ -174,20 +174,18 @@ first end-to-end step.
 The first differentiation of this would need to be simple.
 Perhaps HTML element tests: cards, buttons, text, field.
 
-In code, see "main_page" json structure.
-
-* (set of cards)(cards)
-* (viewport)(interaction)
+* From a (set of cards)(cards)
+* From b (viewport)(interaction)
+* In code, see "main_page" json structure.
 
 #### internal structure
 
 Some description of the application (JSON or YAML) that drives
 its entire operation, which is comprehensible, coherent, and good.
 
-In code, see "THE ESSENCE"
-
-* (sequence)
-* (central description)
+* From a (sequence)
+* From b (central description)
+* In code, see "THE ESSENCE"
 
 #### client environment
 
@@ -197,10 +195,9 @@ to operate properly.
 We need this cheq to read and execute features driven by the 
 'internal structure' described above.
 
-In code, see "EVENT QUEUE" and "CENTRAL HANDLER" and "INIT" and "PROCESS"
-
-* (presentation and interaction)
-* (interaction)(change, inertia, persistence)(client events)
+* From a (presentation and interaction)
+* From b (interaction)(change, inertia, persistence)(client events)
+* In code, see "EVENT QUEUE" and "CENTRAL HANDLER" and "INIT" and "PROCESS"
 
 #### persistence (or server environment)
 
@@ -208,10 +205,9 @@ For now, we'll store in javascript the test data we have separated,
 because we think it should persist, be changeable through CRUD cycles, 
 and be kept on the server.
 
-In code, see 'storage of user actions'.
-
-* (reliability,trust,stability)
-* (persistence)(server rest api)
+* From a (reliability,trust,stability)
+* From b (persistence)(server rest api)
+* In code, see 'storage of user actions'.
 
 
 ### step 2
