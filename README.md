@@ -5,17 +5,19 @@
 The psychological effect of any authored lesson won't
 be apparent until it is authored. Hence we can't know
 too much about its structure. So the work done to 
-create a description of the structure of lessons may
+create a characterization of the structure of lessons may
 be premature, even though we all think we know what
 those will be. In my experience, we need to build
-effective X's and ask ourselves what happened.
+effective X's, pay attention and look for moments 
+where we've learned or discovered something about this, 
+write about those, and *then* work on characterizations.
 
 But I'll try.
 
-*[bracketed comments enumerate the analogies to gatemaker for this programming exercise]*
+*[the bracketed/italic comments enumerate the analogies to gatemaker for this programming exercise]*
 
 (a) describe a learning book (from our document 'a sequence book'),
-    which we call here 'interactive educational sequences'.
+    which we call here 'Interactive Educational Sequences'.
 
 *[this detailed explanation is necessary to make it as clear to the reader of this document 
 as the 'known idea' of the gate]*
@@ -26,7 +28,13 @@ as the 'known idea' of the gate]*
 
 (c) describe how step 0 is starting the transformation of (b) into (a)+(b)
 
+*[this will be the equivalent of drawing a gate on a photo.]*]
+
 (d) describe with centers
+
+*[although describing differentiation and the emergence of latent centers is something
+we kept in mind while creating text for gatemaker, we didn't use this terminology.
+We knew those would be lessons in themselves. Like those we'll be creating here.]*
 
 ## The goal
 
