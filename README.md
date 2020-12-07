@@ -52,6 +52,12 @@ They must build these new ideas in thei minds, they must try to
 use them as a new perspective on situations they previously 
 would have dealt with differently.
 
+**(presentation and interaction)**
+This experience will present and engage, with purpose.
+
+**(reliability, trust, stability)**
+This experience will happen safely, in a supportive fashion.
+
 **(cards)**
 We will do this by presenting a series of interconnected 'cards'.
 These cards are intended to allow the learner to concentrate on
@@ -117,11 +123,13 @@ to harmonize with.
 
 But what exectly is this environment? What are its salient aspects, those with which we need to harmonize?
 
+**(central description)**
+Whatever the webapp within this environment is, it needs to be defined.
+
 **(viewport)**
 The user primary interacts with our cards through the actual viewport, which represents the area in which activity takes place.
 
 The virtual page, or virtual working area, can extend beyond the viewport.
-
 
 **(interaction)**
 Outside of the viewport, the user can interact with a browser's back, forward, and refresh buttons, which have a narrow range of expected behavior.
@@ -134,13 +142,13 @@ in the viewport at that moment.
 **(presentation)**
 
 **(change, inertia, persistence)**
+I mean these in the psychological sense: these are things that appear to happen in a browser.
 
 **(client-server interaction)**
 
 **(client events, server rest api)**
 
 **(dom, javascript, css, server-side language)**
-
 
 ## The approach
 
@@ -165,6 +173,8 @@ first end-to-end step.
 
 The first differentiation of this would need to be simple.
 Perhaps HTML element tests: cards, buttons, text, field.
+* (set of cards)(cards)
+* (viewport)(interaction)
 
 #### internal structure
 
@@ -172,6 +182,9 @@ Some description of the application (JSON or YAML) that drives
 its entire operation, which is comprehensible, coherent, and good.
 
 See "THE ESSENCE"
+
+* (sequence)
+* (central description)
 
 #### client environment
 
@@ -181,12 +194,19 @@ to operate properly.
 We need this cheq to read and execute features driven by the 
 'internal structure' described above.
 
-See "EVENT QUEUE" and "CENTRAL HANDLER" and "INIT" and "PROCESS"
+In code, see "EVENT QUEUE" and "CENTRAL HANDLER" and "INIT" and "PROCESS"
+
+* (presentation and interaction)
+* (interaction)(change, inertia, persistence)(client events)
 
 #### persistence (or server environment)
 
 For now, we'll store in javascript the test data we have separated,
 because we think it should persist, be changeable through CRUD cycles, 
 and be kept on the server.
+
+* (reliability,trust,stability)
+* (persistence)(server rest api)
+
 
 ### step 2
