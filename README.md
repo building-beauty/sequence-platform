@@ -203,9 +203,12 @@ to operate properly.
 We need this cheq to read and execute features driven by the 
 'internal structure' described above.
 
+We need to process that essence description by routing each
+event to a feature implementation.
+
 * From a (presentation and interaction)
 * From b (interaction)(change, inertia, persistence)(client events)
-* In code, see "EVENT QUEUE" and "CENTRAL HANDLER" and "INIT" and "PROCESS"
+* In code, see "EVENT QUEUE", "CENTRAL HANDLER", "INIT", "PROCESS" and "FEATURES"
 
 #### persistence (or server environment)
 
@@ -219,3 +222,4 @@ and be kept on the server.
 
 
 ### step 2
+
