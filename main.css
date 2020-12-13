@@ -1,3 +1,42 @@
 /*
 main.css
 */
+
+body {
+background:black;
+}
+
+.card {
+padding:20px;
+width:96%;
+height:96%;
+}
+
+.button {
+padding:10px;
+background-color:black;
+color:white;
+font-family:arial;
+font-size:20px;
+width:fit-content;
+height:fit-content;
+cursor:pointer;
+}
+
+#card1 {
+background-color:#91c09c;
+font-family:arial;
+font-size:40px;
+color:yellow;
+}
+
+#card2 {
+background-color:#a1bcd2;
+font-size:50px;
+color:white;
+}
+
+#image1 {
+width: 300px;
+padding:100px 300px 100px 300px;
+}
