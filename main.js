@@ -36,8 +36,13 @@ function central_handler () {
 
 function init () {
     // start from the JSON structure 'start'
-    // put into element 'body'
-    process(start);
+    // (by default, unless query string like:
+    // index.html?start)
+    var default_start = 'start';
+    if (window.location.search != "") {
+	default_start = window.location.search.slice(1);
+    }
+    process(window[default_start]);
 }
 
 // ***************************************************************
@@ -48,7 +53,7 @@ function init () {
 
 function process(obj) {
 
-    // ITERATE THROUGH THE FEATURES HERE
+    // ROUTING THROUGH THE FEATURES
 
     if (obj["feature"] == "set_of_cards") {
        f_element(obj);
@@ -94,6 +99,7 @@ function process(obj) {
     }
 
     // CALL PROCESS ON ANY JSON ARRAY
+    // (for traversal)
     if (Array.isArray(obj)) {
        for (var x of obj) {
            process (x);
@@ -106,46 +112,46 @@ function process(obj) {
 //
 
 function f_element(obj) {
- var n_div = document.createElement('div');
- document.getElementById(obj["target_id"]).appendChild(n_div);
- n_div.className = obj["feature"];
- n_div.innerHTML = obj["content"];
- n_div.id = obj["id"];
- if ("start" in obj) {
-     if (obj["start"] == "hidden") {
-	 n_div.style.display = "none";
-     }
- }
- if ("switch_click" in obj) {
-     n_div.onclick = n_div.ontouch = function(event) {
-	 var cards = document.getElementsByClassName("card");
-	 for (var i = 0; i < cards.length; i ++) {
-	     cards[i].style.display = 'none';
-	 }     
-	 document.getElementById(obj["switch_click"]).style.display = "block";
-     }
- }
- if ("click_process" in obj) {
-     n_div.onclick = n_div.ontouch = function(event) {
-	 process(window[obj["click_process"]]);
-     }
- }
+    var n_div = document.createElement('div');
+    document.getElementById(obj["target_id"]).appendChild(n_div);
+    n_div.className = obj["feature"];
+    n_div.innerHTML = obj["content"];
+    n_div.id = obj["id"];
+    if ("init_visibility" in obj) {
+	if (obj["init_visibility"] == "hidden") {
+	    n_div.style.display = "none";
+	}
+    }
+    if ("switch_click" in obj) {
+	n_div.onclick = n_div.ontouch = function(event) {
+	    var cards = document.getElementsByClassName("card");
+	    for (var i = 0; i < cards.length; i ++) {
+		cards[i].style.display = 'none';
+	    }     
+	    document.getElementById(obj["switch_click"]).style.display = "block";
+	}
+    }
+    if ("click_process" in obj) {
+	n_div.onclick = n_div.ontouch = function(event) {
+	    process(window[obj["click_process"]]);
+	}
+    }
 }
 
 function f_set_of_cards(obj) {
-//
+    //
 }
 
 function f_card(obj) {
-//
+    //
 }
 
 function f_button(obj) {
-//
+    //
 }
 
 function f_text(obj) {
-//
+    //
 }
 
 
@@ -157,54 +163,110 @@ function f_text(obj) {
 // (a kind of option-oriented programming)
 //
 
-var start = [
-         {
+var start = 
+    [
+     {
          "feature":"card",
 	 "id":"card1",
          "target_id":"root",
          "content":"card1"
-	 },
+     },
 
-         {
+     {
          "feature":"button",
 	 "id":"button1",
          "target_id":"card1",
          "content":"to card2",
 	 "switch_click":"card2"
-	 },
-         {
+     },
+     {
          "feature":"card",
 	 "id":"card2",
          "target_id":"root",
          "content":"card2",
-	 "start":"hidden"
-	 },
+	 "init_visibility":"hidden"
+     },
 
-         {
+     {
          "feature":"button",
 	 "id":"button2",
          "target_id":"card2",
          "content":"load photo",
 	 "click_process":"load_the_photo"
-	 }
-		      ]
+     }
+     ]
     ;
 
-    var load_the_photo = [
-		{
-		    "feature":"image",
-		    "target_id":"card2",
-		    "id":"image1",
-		    "src":"chanterelle.jpg"
-		},
-		{
-		    "feature":"redefine",
-		    "id":"button2",
-		    "content":"to card1",
-		    "switch_click":"card1"
-		}
-	       ];
+var load_the_photo = 
+    [
+     {
+	 "feature":"image",
+	 "target_id":"card2",
+	 "id":"image1",
+	 "src":"chanterelle.jpg"
+     },
+     {
+	 "feature":"redefine",
+	 "id":"button2",
+	 "content":"to card1",
+	 "switch_click":"card1"
+     }
+     ]
+;
 
+// ***************************************************************
+// Other essences
+//
+// 1. add the comment header above, with your essence name
+// 2. add a unique_global_name and json structures
+// 3. use with index?unique_global_name
+
+var second_example = 
+    [
+     {
+         "feature":"card",
+	 "id":"card1",
+         "target_id":"root",
+         "content":"card1"
+     },
+
+     {
+         "feature":"button",
+	 "id":"button1",
+         "target_id":"card1",
+         "content":"to card2",
+	 "switch_click":"card2"
+     },
+     {
+         "feature":"card",
+	 "id":"card2",
+         "target_id":"root",
+         "content":"card2",
+	 "init_visibility":"hidden"
+     },
+     {
+         "feature":"button",
+	 "id":"button2",
+         "target_id":"card2",
+         "content":"to card3",
+	 "switch_click":"card3"
+     },
+     {
+         "feature":"card",
+	 "id":"card3",
+         "target_id":"root",
+         "content":"card3",
+	 "init_visibility":"hidden"
+     },
+     {
+         "feature":"button",
+	 "id":"button2",
+         "target_id":"card3",
+         "content":"to card1",
+	 "switch_click":"card1"
+     }
+     ]
+    ;
 
 // ***************************************************************
 // Storage of user actions
