@@ -31,7 +31,7 @@ as the 'known idea' of the gate]*
 
 *[to provide equivalence to environment represented by the photo in gatemaker]*
 
-(c) describe how step 0 is starting the transformation of (b) into (a)+(b)
+(c) describe how step 1 is starting the transformation of (b) into (a)+(b)
 
 *[this will be the equivalent of drawing a gate on a photo.]*
 
@@ -131,6 +131,9 @@ to harmonize with.
 
 But what exectly is this environment? What are its salient aspects, those with which we need to harmonize?
 
+**(collaboration)**
+It must be possible to build this webapp with multiple people
+
 **(central description)**
 Whatever the webapp within this environment is, it needs to be defined.
 
@@ -218,7 +221,13 @@ and be kept on the server.
 
 * From a (reliability,trust,stability)
 * From b (persistence)(server rest api)
-* In code, see 'storage of user actions'.
+* In code, see "STORAGE OF USER DATA" pre-stub.
+
+#### collboration-ability
+
+* From a (human environment)
+* From b (collaboration)
+* In code, see "OTHER ESSENCES" and "INIT" and "second_example".
 
 
 ### step 2

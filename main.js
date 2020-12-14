@@ -215,11 +215,14 @@ var load_the_photo =
 ;
 
 // ***************************************************************
-// Other essences
+// Other Essences (for collaboration)
 //
+// To use:
 // 1. add the comment header above, with your essence name
 // 2. add a unique_global_name and json structures
 // 3. use with index?unique_global_name
+// 4. add/adjust 'process' routing and 'features' as needed
+//
 
 var second_example = 
     [
@@ -269,8 +272,9 @@ var second_example =
     ;
 
 // ***************************************************************
-// Storage of user actions
+// Storage of user data
 //
-// A pre-stub. When the user does something, we will store it here.
-// and eventually put it on the server.
+// A pre-stub. When the user changes something, we will store it here.
+// and eventually put it on the server. We assume this is desired
+// for a sense of stability, not for spying.
 //
