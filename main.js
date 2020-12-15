@@ -1,3 +1,6 @@
+// ***************************************************************
+// main.js of the sequence center
+//
 
 // ***************************************************************
 // EVENT QUEUE
@@ -48,58 +51,53 @@ function init () {
 // ***************************************************************
 // PROCESS
 //
-// process the NEXT item in the ESSENCE
+// 'process' the next list in the ESSENCE
+//
+// Note that 'process' is a feature router, so:
 //
 
 function process(obj) {
 
-    // ROUTING THROUGH THE FEATURES
+    // A feature router
 
     if (obj["feature"] == "set_of_cards") {
-       f_element(obj);
-       f_set_of_cards(obj);
+	var element = document.createElement('div');
+	obj["element"] = element;
+	property_router(obj);
     }
 
     if (obj["feature"] == "card") {
-       f_element(obj);
-       f_card(obj);
+	var element = document.createElement('div');
+	obj["element"] = element;
+	property_router(obj);
     }
 
     if (obj["feature"] == "button") {
-       f_element(obj);
-       f_button(obj);
+	var element = document.createElement('div');
+	obj["element"] = element;
+	property_router(obj);
     }
 
     if (obj["feature"] == "text") {
-       f_element(obj);
-       f_text(obj);
+	var element = document.createElement('div');
+	obj["element"] = element;
+	property_router(obj);
     }
 
     if (obj["feature"] == "image") {
-	var n_div = document.createElement('img');
-	document.getElementById(obj["target_id"]).appendChild(n_div);
-	n_div.className = obj["feature"];
-	n_div.innerHTML = obj["content"];
-	n_div.id = obj["id"];
-	n_div.src = obj["src"];
+	var element = document.createElement('img');
+	obj["element"] = element;
+	property_router(obj);
     }
 
     if (obj["feature"] == "redefine") {
-	n_div = document.getElementById(obj["id"]);
- 	n_div.innerHTML = obj["content"];
-	if ("switch_click" in obj) {
-	    n_div.onclick = n_div.ontouch = function(event) {
-		var cards = document.getElementsByClassName("card");
-		for (var i = 0; i < cards.length; i ++) {
-		    cards[i].style.display = 'none';
-		}     
-		document.getElementById(obj["switch_click"]).style.display = "block";
-	    }    
-	}
+	var element  = document.getElementById(obj["id"]);
+	obj["element"] = element;
+	property_router(obj);
     }
 
     // CALL PROCESS ON ANY JSON ARRAY
-    // (for traversal)
+    // (recursive traversal)
     if (Array.isArray(obj)) {
        for (var x of obj) {
            process (x);
@@ -108,22 +106,45 @@ function process(obj) {
 }
 
 // ***************************************************************
-// FEATURES
+// PROPERTY ROUTER
+//
+// All features are built from a composition of properties defined 
+// in the ESSENCE.
+//
+// Most are independent. Those that aren't, will adjust for
+// their own context dependencies.
 //
 
-function f_element(obj) {
-    var n_div = document.createElement('div');
-    document.getElementById(obj["target_id"]).appendChild(n_div);
-    n_div.className = obj["feature"];
-    n_div.innerHTML = obj["content"];
-    n_div.id = obj["id"];
+function property_router(obj) {
+    var element = obj["element"];
+
+    // generally, append element to DOM
+    if (!(obj["feature"] == "redefine")) {
+	document.getElementById(obj["target_id"]).appendChild(element);
+    }
+    // generally, element class becomes feature name
+    if ("feature" in obj &&
+	!(obj["feature"] == "redefine")) {
+	element.className = obj["feature"];
+    }
+
+    // independent properties
+    if ("content" in obj) {
+	element.innerHTML = obj["content"];
+    }
+    if ("id" in obj) {
+	element.id = obj["id"];
+    }
+    if ("src" in obj) {
+	element.src = obj["src"];
+    }
     if ("init_visibility" in obj) {
 	if (obj["init_visibility"] == "hidden") {
-	    n_div.style.display = "none";
+	    element.style.display = "none";
 	}
     }
     if ("switch_click" in obj) {
-	n_div.onclick = n_div.ontouch = function(event) {
+	element.onclick = element.ontouch = function(event) {
 	    var cards = document.getElementsByClassName("card");
 	    for (var i = 0; i < cards.length; i ++) {
 		cards[i].style.display = 'none';
@@ -132,35 +153,23 @@ function f_element(obj) {
 	}
     }
     if ("click_process" in obj) {
-	n_div.onclick = n_div.ontouch = function(event) {
+	element.onclick = element.ontouch = function(event) {
 	    process(window[obj["click_process"]]);
 	}
     }
 }
 
-function f_set_of_cards(obj) {
-    //
-}
-
-function f_card(obj) {
-    //
-}
-
-function f_button(obj) {
-    //
-}
-
-function f_text(obj) {
-    //
-}
-
 
 // ***************************************************************
-// THE ESSENCE or CENTRAL APPLICATION DESCRIPTION
+// THE ESSENCE (or central application description)
 //
-// The ESSENCE, or configuration
-// AKA The application definition
-// (a kind of option-oriented programming)
+// The essence or configuration
+// or application definition
+// or 'option'-oriented programming
+// possibly portable ...
+// intentionally flexible ...
+// intentionally multi-level ...
+// hopefully inspiring a beautiful and useful set of features ... 
 //
 
 var start = 
@@ -196,6 +205,9 @@ var start =
      }
      ]
     ;
+
+// Note: the following is a process that runs
+// after the user has clicked button2 above
 
 var load_the_photo = 
     [
@@ -278,3 +290,4 @@ var second_example =
 // and eventually put it on the server. We assume this is desired
 // for a sense of stability, not for spying.
 //
+
