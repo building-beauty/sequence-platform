@@ -211,7 +211,7 @@ event to a feature implementation.
 
 * From a (presentation and interaction)
 * From b (interaction)(change, inertia, persistence)(client events)
-* In code, see "EVENT QUEUE", "CENTRAL HANDLER", "INIT", "PROCESS" and "FEATURES"
+* In code, see "EVENT QUEUE", "CENTRAL HANDLER", "INIT", "PROCESS", "FEATURES", and "PROPERTY ROUTER"
 
 #### persistence (or server environment)
 
