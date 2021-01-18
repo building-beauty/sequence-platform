@@ -3,50 +3,32 @@
 //
 
 // ***************************************************************
-// EVENT QUEUE
-//
+// ACTION QUEUE
 
-var event_queue = [];
-var the_event = null;
+var action_queue = [];
+var the_action = null;
 
 // ***************************************************************
 // CENTRAL HANDLER:
 //
-// called by onload and setTimeout
-
-function central_handler () {
-    if (!(event_queue.length > 0)) {
-      return;
-    }
-    the_event = event_queue.shift();
-
-    // call event
-    window[the_event.name]();
-
-    // only loop until the stack is empty
-    if (event_queue.length > 0) {
-       setTimeout (function () {
-                    central_handler();
-                   },
-                   the_event.delay);
-    }
-}
-
-// ***************************************************************
-// INIT
-// called by body element's onload
+// Called from initial onload, and any handler / listener that needs
+// to launch some action for processing.
 //
+// Any action can be found as a global variable name in the 'essence',
+// or central description.
+//
+// The parameter a can be one action, or an array of independent actions.
 
-function init () {
-    // start from the JSON structure 'start'
-    // (by default, unless query string like:
-    // index.html?start)
-    var default_start = 'start';
-    if (window.location.search != "") {
-	default_start = window.location.search.slice(1);
+function central_handler (a) {
+    action_queue.push(a);
+    while (action_queue.length > 0) {
+	the_action = action_queue.shift();
+	var delay = 1;
+	if ("delay" in the_action) {delay = parseInt(the_action["delay"]);}
+	setTimeout(function() {process(window[the_action.name])},delay);
     }
-    process(window[default_start]);
 }
+
 
 // ***************************************************************
 // PROCESS
@@ -58,8 +40,15 @@ function init () {
 
 function process(obj) {
 
-    // A feature router
+    // recursive traversal
+    if (Array.isArray(obj)) {
+	for (var x of obj) {
+	    process (x);
+	}
+	return;
+    }
 
+    // A feature router
     if (obj["feature"] == "set_of_cards") {
 	var element = document.createElement('div');
 	obj["element"] = element;
@@ -74,6 +63,12 @@ function process(obj) {
 
     if (obj["feature"] == "button") {
 	var element = document.createElement('div');
+	obj["element"] = element;
+	property_router(obj);
+    }
+
+    if (obj["feature"] == "link") {
+	var element = document.createElement('a');
 	obj["element"] = element;
 	property_router(obj);
     }
@@ -96,13 +91,12 @@ function process(obj) {
 	property_router(obj);
     }
 
-    // CALL PROCESS ON ANY JSON ARRAY
-    // (recursive traversal)
-    if (Array.isArray(obj)) {
-       for (var x of obj) {
-           process (x);
-       }
+    if (obj["feature"] == "animation_setup") {
+	var element = document.createElement('div');
+	obj["element"] = element;
+	property_router(obj);
     }
+
 }
 
 // ***************************************************************
@@ -138,6 +132,10 @@ function property_router(obj) {
     if ("src" in obj) {
 	element.src = obj["src"];
     }
+    if ("href" in obj) {
+	element.href = obj["href"];
+	element.target = "_blank";
+    }
     if ("init_visibility" in obj) {
 	if (obj["init_visibility"] == "hidden") {
 	    element.style.display = "none";
@@ -152,136 +150,44 @@ function property_router(obj) {
 	    document.getElementById(obj["switch_click"]).style.display = "block";
 	}
     }
+    if ("animation_name" in obj) {
+	central_handler({'name':obj["animation_name"],'delay':'100'});
+    }
+    if ("animation_move" in obj) {
+	var tmp1 = element.style.left.replace('px','');
+	var tmp2 = 800;
+	if (tmp1 != '') {
+	    tmp2 = parseInt(tmp1);
+	}
+	if (tmp2 > 850) {
+	    tmp2 = 800;
+	}
+	element.style.left = tmp2 + 5 + "px" 
+	central_handler({'name':'animation1','delay':'100'});
+    }
     if ("click_process" in obj) {
 	element.onclick = element.ontouch = function(event) {
-	    process(window[obj["click_process"]]);
+	    central_handler({'name':obj["click_process"]});
 	}
+	      // that's ok for onclick
+	      // but if we want to carryon some processing after releasing control
+	      // we'd need to do a set timeout( eq / ch)
+	      // which should be one thing like:
+	      // ch(e)
+
+	    //	    process(window[obj["click_process"]]);
+	    /*
+	      or:
+	      push obj["click_process"] onto event queue
+	      central handler();
+	      or:
+	      event_queue.push({'name':obj["click_process"],'delay':0});
+	      central_handler();
+	    */
     }
 }
 
 
-// ***************************************************************
-// THE ESSENCE (or central application description)
-//
-// The essence or configuration
-// or application definition
-// or 'option'-oriented programming
-// possibly portable ...
-// intentionally flexible ...
-// intentionally multi-level ...
-// hopefully inspiring a beautiful and useful set of features ... 
-//
-
-var start = 
-    [
-     {
-         "feature":"card",
-	 "id":"card1",
-         "target_id":"root",
-         "content":"card1"
-     },
-
-     {
-         "feature":"button",
-	 "id":"button1",
-         "target_id":"card1",
-         "content":"to card2",
-	 "switch_click":"card2"
-     },
-     {
-         "feature":"card",
-	 "id":"card2",
-         "target_id":"root",
-         "content":"card2",
-	 "init_visibility":"hidden"
-     },
-
-     {
-         "feature":"button",
-	 "id":"button2",
-         "target_id":"card2",
-         "content":"load photo",
-	 "click_process":"load_the_photo"
-     }
-     ]
-    ;
-
-// Note: the following is a process that runs
-// after the user has clicked button2 above
-
-var load_the_photo = 
-    [
-     {
-	 "feature":"image",
-	 "target_id":"card2",
-	 "id":"image1",
-	 "src":"chanterelle.jpg"
-     },
-     {
-	 "feature":"redefine",
-	 "id":"button2",
-	 "content":"to card1",
-	 "switch_click":"card1"
-     }
-     ]
-;
-
-// ***************************************************************
-// Other Essences (for collaboration)
-//
-// To use:
-// 1. add the comment header above, with your essence name
-// 2. add a unique_global_name and json structures
-// 3. use with index?unique_global_name
-// 4. add/adjust 'process' routing and 'features' as needed
-//
-
-var second_example = 
-    [
-     {
-         "feature":"card",
-	 "id":"card1",
-         "target_id":"root",
-         "content":"card1"
-     },
-
-     {
-         "feature":"button",
-	 "id":"button1",
-         "target_id":"card1",
-         "content":"to card2",
-	 "switch_click":"card2"
-     },
-     {
-         "feature":"card",
-	 "id":"card2",
-         "target_id":"root",
-         "content":"card2",
-	 "init_visibility":"hidden"
-     },
-     {
-         "feature":"button",
-	 "id":"button2",
-         "target_id":"card2",
-         "content":"to card3",
-	 "switch_click":"card3"
-     },
-     {
-         "feature":"card",
-	 "id":"card3",
-         "target_id":"root",
-         "content":"card3",
-	 "init_visibility":"hidden"
-     },
-     {
-         "feature":"button",
-	 "id":"button2",
-         "target_id":"card3",
-         "content":"to card1",
-	 "switch_click":"card1"
-     }
-     ]
-    ;
 
 // ***************************************************************
 // Storage of user data

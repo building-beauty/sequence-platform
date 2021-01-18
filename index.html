@@ -5,13 +5,33 @@
 <title>The Sequence Center</title>
 
 <link rel="stylesheet" type="text/css" href="main.css" />
+<script type="text/javascript" src="essence.js"></script>
 <script type="text/javascript" src="main.js"></script>
 
+<script>
+/* theory: everyone using and modifying 
+   the same process/feature/property code
+   will lead to the discovery of universals.
+*/
+
+function init () {
+    // start from the JSON structure 'start'
+    // by default, unless query string like:
+    // index.html?other_start
+
+    var default_start = 'start';
+
+    if (window.location.search != "") {
+	default_start = window.location.search.slice(1);
+    }
+
+    central_handler({'name':default_start});
+}
+
+</script>
 </head>
 
-<body onload="event_queue.push({'name':'init','delay':2000}); central_handler();">
- <div id="root">
- </div>
+<body id="body" onload="init();">
 </body>
 
 </html>

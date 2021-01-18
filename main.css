@@ -6,6 +6,21 @@ body {
  background:black;
 }
 
+/****
+
+mostly for chaq
+
+***/
+
+#square {
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  left:800px;
+  position: relative;
+  background-color: red;
+}
+
 .card {
  padding:20px;
  width:96%;
@@ -13,6 +28,288 @@ body {
 }
 
 .button {
+ margin: 1%;
+ padding:1%;
+ background-color:black;
+ color:white;
+ font-family:arial;
+ font-size:100%;
+ width:fit-content;
+ height:fit-content;
+ cursor:pointer;
+}
+
+#button1 {
+ display:inline-block;
+}
+
+.link {
+ padding:10px;
+ background-color:#404040;
+ color:yellow;
+ font-family:arial;
+ font-size:20px;
+ width:fit-content;
+ height:fit-content;
+ cursor:pointer;
+}
+
+#link1 {
+ float:right;
+}
+
+#card1 {
+ background-color:#7b8d31;
+ color:yellow;
+ font-family:arial;
+ font-size:40px;
+ font-weight: bold;
+}
+
+#card2 {
+ background-color:#7b8d31;
+ color:yellow;
+/*
+ background-color:#4c410a ; 
+*/
+ /*#91c09c*/
+ font-family:arial;
+ font-size:40px;
+ font-weight: bold;
+ color:yellow;
+}
+
+#card2_text1 {
+ padding: 20px 100px 20px 100px;
+ font-family:arial;
+ font-size:20px;
+ color:white;
+ font-style: italic;
+ font-weight: normal;
+}
+
+#subcard1 {
+ display:grid;
+ grid: 1fr / 1fr 1fr;
+}
+
+#card1_text1 {
+ padding: 20px 100px 20px 100px;
+ font-family:arial;
+ font-size:medium;
+ color:white;
+ font-style: italic;
+ font-weight: normal;
+}
+
+#card1_text2 {
+ padding: 20px 100px 20px 100px;
+ font-family:arial;
+ font-size:large;
+ color:yellow;
+ font-style: normal;
+ font-weight: bold;
+}
+
+#card1_text3 {
+ padding: 20px 100px 20px 100px;
+ font-family:arial;
+ font-size:medium;
+ color:white;
+ font-style: italic;
+ font-weight: normal;
+}
+
+#card1_text4 {
+ padding: 20px 100px 20px 100px;
+ font-family:arial;
+ font-size:80%;
+ color:yellow;
+ font-style: normal;
+ font-weight: bold;
+}
+
+#card4_text1 {
+ padding: 20px 100px 20px 100px;
+ font-family:courier;
+ font-size:17px;
+ color:white;
+ font-style: normal;
+ font-weight: normal;
+}
+
+.bigger {
+ font-size:40px;
+}
+
+#card3 {
+/*
+ background-color:#a1bcd2;
+ color:white;
+*/
+ background-color:#7b8d31;
+ color:yellow;
+ font-family:arial;
+ font-size:40px;
+ font-weight: bold;
+
+}
+
+#card3_text1 {
+ padding: 20px 100px 20px 100px;
+ font-family:courier;
+ font-size:20px;
+ color:white;
+ font-style: normal;
+ font-weight: normal;
+}
+
+#card3_text2 {
+ padding: 20px 100px 20px 100px;
+ font-family:courier;
+ font-size:20px;
+ color:white;
+ font-style: normal;
+ font-weight: normal;
+}
+
+#card4 {
+/*
+ background-color:#8a1213;
+ color:white;
+*/
+ background-color:#7b8d31;
+ color:yellow;
+ font-family:arial;
+ font-size:40px;
+ font-weight: bold;
+}
+
+#card5 {
+/*
+ background-color:#0e58a0;
+ color:white;
+*/
+/*
+ background-color:#8a1213;
+ color:white;
+*/
+ font-size:50px;
+}
+
+#card5_text1 {
+ padding: 20px 100px 20px 100px;
+ font-family:courier;
+ font-size:20px;
+ color:yellow;
+ font-style: normal;
+ font-weight: normal;
+}
+
+#card6 {
+/*
+ background-color:#fecb7d;
+ color:white;
+*/
+ background-color:#e9a000;
+ color:white;
+ font-size:50px;
+}
+
+#card6_text1 {
+ padding: 20px 100px 20px 100px;
+ font-family:courier;
+ font-size:30px;
+ color:white;
+ font-style: normal;
+ font-weight: bold;
+}
+
+#card6_text2 {
+ padding: 20px 100px 20px 100px;
+ font-family:courier;
+ font-size:20px;
+ color:black;
+ font-style: normal;
+ font-weight: normal;
+}
+
+#card7 {
+ background-color:#e9a000;
+ color:white;
+ font-size:50px;
+}
+
+#card7_text1 {
+ padding: 20px 100px 20px 100px;
+ font-family:courier;
+ font-size:20px;
+ color:white;
+ font-style: normal;
+ font-weight: normal;
+}
+
+#card8 {
+ background-color:e528ba;
+ color:black;
+ font-size:50px;
+}
+
+#card8_text1 {
+ padding: 20px 100px 20px 100px;
+ font-family:courier;
+ font-size:30px;
+ color:white;
+ font-style: normal;
+ font-weight: bold;
+}
+
+#card8_text2 {
+ padding: 20px 100px 20px 100px;
+ font-family:courier;
+ font-size:20px;
+ color:white;
+ font-style: normal;
+ font-weight: normal;
+}
+
+#card9 {
+ background-color:e528ba;
+ color:black;
+ font-size:50px;
+}
+
+#card9_text1 {
+ padding: 0px 100px 20px 100px;
+ font-family:courier;
+ font-size:25px;
+ color:white;
+ font-style: normal;
+ font-weight: bold;
+}
+
+#card9_text2 {
+ padding: 0px 100px 20px 100px;
+ font-family:courier;
+ font-size:20px;
+ color:white;
+ font-style: normal;
+ font-weight: normal;
+}
+
+#diagram {
+ height: 400px;
+}
+
+/* mostly for the simple start */
+
+.simple_card {
+ padding:20px;
+ width:96%;
+ height:96%;
+}
+
+.simple_button {
  padding:10px;
  background-color:black;
  color:white;
@@ -23,26 +320,26 @@ body {
  cursor:pointer;
 }
 
-#card1 {
+#simple_card1 {
  background-color:#91c09c;
  font-family:arial;
  font-size:40px;
  color:yellow;
 }
 
-#card2 {
+#simple_card2 {
  background-color:#a1bcd2;
  font-size:50px;
  color:white;
 }
 
-#card3 {
+#simple_card3 {
  background-color:#8a1213;
  font-size:50px;
  color:white;
 }
 
-#image1 {
+#simple_image1 {
  width: 300px;
  padding:100px 300px 100px 300px;
 }
